@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3024F3F-489F-433C-A9D6-78CC668A6BC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SengkeoHotel</RootNamespace>
+    <AssemblyName>SengkeoHotel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassConnection.cs" />
+    <Compile Include="cntrl_order\OrderBillNo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controller\controller_service_room\duplexreserve_controller\checkReserveBooking_controller.cs" />
+    <Compile Include="controller\controller_service_room\duplexreserve_controller\duplexreserveController.cs" />
+    <Compile Include="controller\controller_service_room\duplexreserve_controller\ReservBookingController.cs" />
+    <Compile Include="room_Service_controller\DuplexReserve\frmDuplexReservemanage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\DuplexReserve\frmDuplexReservemanage.Designer.cs">
+      <DependentUpon>frmDuplexReservemanage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\ReserveBooking\frmBookingReserveDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\ReserveBooking\frmBookingReserveDetails.Designer.cs">
+      <DependentUpon>frmBookingReserveDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\ReserveBooking\frmCustomerReservBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\ReserveBooking\frmCustomerReservBooking.Designer.cs">
+      <DependentUpon>frmCustomerReservBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_import\frmShowProductInStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_import\frmShowProductInStock.Designer.cs">
+      <DependentUpon>frmShowProductInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_import\Frm_ImpProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_import\Frm_ImpProduct.Designer.cs">
+      <DependentUpon>Frm_ImpProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\Form_OrderProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\Form_OrderProducts.Designer.cs">
+      <DependentUpon>Form_OrderProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\frmOrderBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\frmOrderBill.Designer.cs">
+      <DependentUpon>frmOrderBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\From_AddSupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\From_AddSupp.Designer.cs">
+      <DependentUpon>From_AddSupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\cntrl_order\OrderBillNo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderBillNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cntrol_Users\frmCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cntrol_Users\frmCreateAccount.Designer.cs">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cntrol_Users\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cntrol_Users\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cntrol_Users\frm_UersProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cntrol_Users\frm_UersProfile.Designer.cs">
+      <DependentUpon>frm_UersProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommandExecuteType.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ConnectionManagement.cs" />
+    <Compile Include="service_product_controller\contrl_Sell\frmSellBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\frmSellBill.Designer.cs">
+      <DependentUpon>frmSellBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\frmSellProductLast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\frmSellProductLast.Designer.cs">
+      <DependentUpon>frmSellProductLast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\SellBillNo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SellBillNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\Form_SellProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="service_product_controller\contrl_Sell\Form_SellProducts.Designer.cs">
+      <DependentUpon>Form_SellProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\AnymessageBox.cs" />
+    <Compile Include="controller\ChangeColumns_Controller.cs" />
+    <Compile Include="controller\controller_service_product\importProduct_controller\Import_controller.cs" />
+    <Compile Include="controller\Login_Controller\LoginController.cs" />
+    <Compile Include="controller\controller_service_product\orderProduct_controller\check_order_controller.cs" />
+    <Compile Include="controller\controller_service_product\orderProduct_controller\order_detail_controller.cs" />
+    <Compile Include="controller\controller_service_product\orderProduct_controller\ProductController.cs" />
+    <Compile Include="controller\controller_service_product\sellProduct_controller\SellController.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dbconnection\connectdb_change.cs" />
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\dbConnect.cs" />
+    <Compile Include="FormBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooking.Designer.cs">
+      <DependentUpon>FormBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCardType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCardType.Designer.cs">
+      <DependentUpon>FormCardType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormCheckIn.Designer.cs">
+      <DependentUpon>FormCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormCheckOut.Designer.cs">
+      <DependentUpon>FormCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCurrency.Designer.cs">
+      <DependentUpon>FormCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartment.Designer.cs">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployee.Designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmployeeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployeeCard.Designer.cs">
+      <DependentUpon>FormEmployeeCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExpendType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExpendType.Designer.cs">
+      <DependentUpon>FormExpendType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImport.Designer.cs">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductCheck.Designer.cs">
+      <DependentUpon>FormProductCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormRoomCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormRoomCheck.Designer.cs">
+      <DependentUpon>FormRoomCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalaryPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalaryPay.Designer.cs">
+      <DependentUpon>FormSalaryPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormMovesRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\checkIn_checkOut_remove\FormMovesRoom.Designer.cs">
+      <DependentUpon>FormMovesRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExpend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExpend.Designer.cs">
+      <DependentUpon>FormExpend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPosition.Designer.cs">
+      <DependentUpon>FormPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducts.Designer.cs">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductType.Designer.cs">
+      <DependentUpon>FormProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoom.Designer.cs">
+      <DependentUpon>FormRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoomType.Designer.cs">
+      <DependentUpon>FormRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalary.Designer.cs">
+      <DependentUpon>FormSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchCustomer.Designer.cs">
+      <DependentUpon>FormSearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchEmployee.Designer.cs">
+      <DependentUpon>FormSearchEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSell.Designer.cs">
+      <DependentUpon>FormSell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkInWorkOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkInWorkOut.Designer.cs">
+      <DependentUpon>FormWorkInWorkOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnit.Designer.cs">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintEmployeeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintEmployeeCard.Designer.cs">
+      <DependentUpon>PrintEmployeeCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectSengKeoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSengKeoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\frmReportTopPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmReportTopPay.Designer.cs">
+      <DependentUpon>frmReportTopPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmReportTopRecieve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmReportTopRecieve.Designer.cs">
+      <DependentUpon>frmReportTopRecieve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\reportTopPay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportTopPay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\reporttopRecieve.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporttopRecieve.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\DuplexReserve\frmDuplexReserveDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_Service_controller\DuplexReserve\frmDuplexReserveDetail.Designer.cs">
+      <DependentUpon>frmDuplexReserveDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="room_Service_controller\DuplexReserve\frmDuplexReservemanage.resx">
+      <DependentUpon>frmDuplexReservemanage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\ReserveBooking\frmBookingReserveDetails.resx">
+      <DependentUpon>frmBookingReserveDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\ReserveBooking\frmCustomerReservBooking.resx">
+      <DependentUpon>frmCustomerReservBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_import\frmShowProductInStock.resx">
+      <DependentUpon>frmShowProductInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_import\Frm_ImpProduct.resx">
+      <DependentUpon>Frm_ImpProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_order\Form_OrderProducts.resx">
+      <DependentUpon>Form_OrderProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_order\frmOrderBill.resx">
+      <DependentUpon>frmOrderBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_order\From_AddSupp.resx">
+      <DependentUpon>From_AddSupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\cntrl_order\OrderBillNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderBillNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cntrol_Users\frmCreateAccount.resx">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cntrol_Users\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cntrol_Users\frm_UersProfile.resx">
+      <DependentUpon>frm_UersProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\contrl_Sell\frmSellBill.resx">
+      <DependentUpon>frmSellBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\contrl_Sell\frmSellProductLast.resx">
+      <DependentUpon>frmSellProductLast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\contrl_Sell\SellBillNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SellBillNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="service_product_controller\contrl_Sell\Form_SellProducts.resx">
+      <DependentUpon>Form_SellProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBooking.resx">
+      <DependentUpon>FormBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCardType.resx">
+      <DependentUpon>FormCardType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\checkIn_checkOut_remove\FormCheckIn.resx">
+      <DependentUpon>FormCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\checkIn_checkOut_remove\FormCheckOut.resx">
+      <DependentUpon>FormCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCurrency.resx">
+      <DependentUpon>FormCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDepartment.resx">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployeeCard.resx">
+      <DependentUpon>FormEmployeeCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExpendType.resx">
+      <DependentUpon>FormExpendType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImport.resx">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductCheck.resx">
+      <DependentUpon>FormProductCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\checkIn_checkOut_remove\FormRoomCheck.resx">
+      <DependentUpon>FormRoomCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalaryPay.resx">
+      <DependentUpon>FormSalaryPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\checkIn_checkOut_remove\FormMovesRoom.resx">
+      <DependentUpon>FormMovesRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExpend.resx">
+      <DependentUpon>FormExpend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPosition.resx">
+      <DependentUpon>FormPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducts.resx">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductType.resx">
+      <DependentUpon>FormProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoom.resx">
+      <DependentUpon>FormRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRoomType.resx">
+      <DependentUpon>FormRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalary.resx">
+      <DependentUpon>FormSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchCustomer.resx">
+      <DependentUpon>FormSearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchEmployee.resx">
+      <DependentUpon>FormSearchEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSell.resx">
+      <DependentUpon>FormSell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWorkInWorkOut.resx">
+      <DependentUpon>FormWorkInWorkOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnit.resx">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintEmployeeCard.resx">
+      <DependentUpon>PrintEmployeeCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmReportTopPay.resx">
+      <DependentUpon>frmReportTopPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmReportTopRecieve.resx">
+      <DependentUpon>frmReportTopRecieve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reportTopPay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportTopPay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reporttopRecieve.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporttopRecieve.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_Service_controller\DuplexReserve\frmDuplexReserveDetail.resx">
+      <DependentUpon>frmDuplexReserveDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="ProjectSengKeoDataSet.xsc">
+      <DependentUpon>ProjectSengKeoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSengKeoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSengKeoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSengKeoDataSet.xss">
+      <DependentUpon>ProjectSengKeoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus Math_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\US Dollar_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pie Chart_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Businessman_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit User Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_48px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save Close_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create New_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save as_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast Forward_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Database_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data in Both Directions_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Great Britain_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Geo-fence_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maintenance_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Read in Bed_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Selfie_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Combo Chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Briefcase_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Group Man Woman_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG-20170104-WA0025.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Classroom_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report Card_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book Shelf_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shuffle_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\External Link_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beer Bottle_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beer Can_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log Cabin_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taj Mahal_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google Groups_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money Bag_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banknotes_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find User Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Property_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View File_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Detective_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Binoculars_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bullish_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Positive Dynamic_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line Chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pie Chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heart Monitor_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Price Tag USD_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contact Card_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Futures_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\High Connection_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POS Terminal_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MS Word_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MS Excel_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bed_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kids Bedroom_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Cart Loaded_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Phone Store_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Permanent Job_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marker_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash In Hand_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Currency Exchange_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foreclosure_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_4750~2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_MG_5294.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Single Bed_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Three Beds_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Two Beds_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bed_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel Information_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Watch TV in Bed_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Double Bed_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four Beds_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\untitled-129x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic-1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manchester United FC_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wall Mount Camera_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deliver Food_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Withdrawal_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scan Stock_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment Reminders_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm Clock_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Multiple Inputs_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="manageController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Replace_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available Updates_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Downloading Updates_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Box_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Double Tick_24px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
